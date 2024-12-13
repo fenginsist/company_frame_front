@@ -16,7 +16,10 @@ export default {
   },
   methods: {
     handleLogin(){
-
+      console.log('11111');
+    },
+    handleTry(){
+      console.log('3333');
     }
   }
 }
@@ -25,75 +28,55 @@ export default {
 <template>
   <div>
     <el-card class="login-form-layout">
-      <el-form autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
+      <el-form autoComplete="on" :model="loginForm" ref="loginForm">
         <div style="text-align: center">
-          <svg-icon icon-class="login-mall" style="width: 56px;height: 56px;color: #409EFF"></svg-icon>
+          <!-- <svg-icon icon-class="login-mall" style="width: 56px;height: 56px;color: #409EFF"></svg-icon> -->
         </div>
-        <h2 class="login-title color-main">企业管理系统</h2>
+        <h2 class="login-title color-main">乒乓球比赛管理系统</h2>
         <el-form-item prop="username">
           <el-input name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="请输入用户名">
             <span > <!--slot="prefix"-->
-              <svg-icon icon-class="user" class="color-main"></svg-icon>
+              <!-- <svg-icon icon-class="user" class="color-main"></svg-icon> -->
             </span>
           </el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input name="password" :type="pwdType" @keyup.enter="handleLogin" v-model="loginForm.password"
+          <el-input name="password" @keyup.enter="handleLogin" v-model="loginForm.password"
             autoComplete="on" placeholder="请输入密码">
             <span><!--slot="prefix"-->
-              <svg-icon icon-class="password" class="color-main"></svg-icon>
+              <!-- <svg-icon icon-class="password" class="color-main"></svg-icon> -->
             </span>
             <span @click="showPwd"><!--slot="prefix"-->
-              <svg-icon icon-class="eye" class="color-main"></svg-icon>
+              <!-- <svg-icon icon-class="eye" class="color-main"></svg-icon> -->
             </span>
           </el-input>
         </el-form-item>
         <el-form-item style="margin-bottom: 60px;text-align: center">
-          <el-button style="width: 45%" type="primary" :loading="loading" @click="handleLogin">
+          <el-button style="width: 45%" type="primary" @click="handleLogin">
             登录
           </el-button>
-          <!-- <el-button style="width: 45%" type="primary" @click.native.prevent="handleTry">
-            获取体验账号
-          </el-button> -->
+          <el-button style="width: 45%" type="primary" @click.native.prevent="handleTry">
+            注册
+          </el-button>
         </el-form-item>
       </el-form>
     </el-card>
-    <img :src="login_center_bg" class="login-center-layout">
-    <el-dialog title="公众号二维码" :visible="dialogVisible" :show-close="false" :center="true" width="30%">
-      <div style="text-align: center">
-        <span class="font-title-large"><span class="color-main font-extra-large">关注公众号</span>回复<span
-            class="color-main font-extra-large">体验</span>获取体验账号</span>
-        <br>
-        <img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/banner/qrcode_for_macrozheng_258.jpg" width="160"
-          height="160" style="margin-top: 10px">
-      </div>
-      <span class="dialog-footer"><!--slot="footer"-->
-        <el-button type="primary" @click="dialogConfirm">确定</el-button>
-      </span>
-    </el-dialog>
   </div>
 </template>
 
 <style scoped>
   .login-form-layout {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     right: 0;
     width: 360px;
     margin: 140px auto;
     border-top: 10px solid #409EFF;
+    text-align: center;
   }
 
   .login-title {
     text-align: center;
-  }
-
-  .login-center-layout {
-    background: #409EFF;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    margin-top: 200px;
+    padding-bottom: 10px;
   }
 </style>
