@@ -1,28 +1,22 @@
 <script setup name="LOGIN">
-
-</script>
-
-<script>
-export default {
-  name: 'LOGIN',
-  data() {
-    return {
-      loginForm: {
+import {ref} from 'vue'
+let loginForm = ref({
         username: '',
         password: '',
         dialogVisible: false
-      }
-    }
-  },
-  methods: {
-    handleLogin(){
-      console.log('11111');
-    },
-    handleTry(){
+      })
+const dynamicMethod = ref(() => {
+    console.log('Initial method');
+  });
+
+const handleLogin = ref(() => {
+    console.log('11111');
+  })
+
+const handleTry = ref(() => {
       console.log('3333');
-    }
-  }
-}
+    })
+
 </script>
 
 <template>
@@ -55,7 +49,7 @@ export default {
           <el-button style="width: 45%" type="primary" @click="handleLogin">
             登录
           </el-button>
-          <el-button style="width: 45%" type="primary" @click.native.prevent="handleTry">
+          <el-button style="width: 45%" type="primary" @click.prevent="handleTry">
             注册
           </el-button>
         </el-form-item>
