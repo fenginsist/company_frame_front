@@ -1,3 +1,6 @@
+# envirment
+node v20.18.1
+npm 10.8.2
 # company_frame_front
 
 This template should help get you started developing with Vue 3 in Vite.

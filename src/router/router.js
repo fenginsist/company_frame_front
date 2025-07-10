@@ -1,6 +1,6 @@
 import { createMemoryHistory, createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 
-import LOGIN from '@/views/login/index.vue'
+import LOGIN from '@/views/login/login.vue'
 // import HR from '@/views/hr/index.vue'
 
 

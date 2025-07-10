@@ -3,7 +3,7 @@
 
 <script>
 export default {
-  name: 'Main',
+  name: 'App',
   data() {
     return {
     }
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <RouterView></RouterView>
+    <RouterView></RouterView>
 </template>
 
 <style scoped>
